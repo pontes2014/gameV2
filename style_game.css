@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(img/background_fazenda.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#box1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 30vh;
+    margin-top: 20px;
+}
+
+#dadosFazendeiro {
+    width: 15%;
+    height: 250px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#nomeFazendeiro {
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+#saldo {
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+#moedaPorClick {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+#moedaPorSegundo {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+#boxPrincipal {
+    text-align: center;
+    width: 30%;
+    overflow: hidden;
+}
+
+#quantidadeAnimais {
+    background-color: black;
+    color: white;
+    width: 15%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+#fazendeiroClicker {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+#img_animals {
+    width: 200px;
+    height: 220px;
+}
+
+#linha_card1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#linha_card2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#card_animals {
+    background-color: black;
+    width: 450px;
+    height: 220px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+#text_card_animals {
+    color: white;
+}

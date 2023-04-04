@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_game.css">
+    <link rel="icon" href="/img/icon_pontes.ico">
+    <title>Fazenda Clicker</title>
+</head>
+
+<body>
+    <div id="box1">
+        <div id="dadosFazendeiro">
+            <p id="nomeFazendeiro">Ola Fazendeiro: anonimo</p>
+            <p id="saldo">Saldo: 0</p>
+            <p id="moedaPorClick">Moeda por click: 1</p>
+            <p id="moedaPorSegundo">Moeda por segundo:0</p>
+        </div>
+        <div id="boxPrincipal">
+            <h1>Fazenda Clicker</h1>
+            <img src="img/fazendeiro.jpg" alt="fazendeiro" id="fazendeiroClicker" onclick="moedaClick()">
+        </div>
+        <div id="quantidadeAnimais">
+            <br>
+            <h3>Quantidade:</h3>
+            <br>
+            <p id="quantidadeCavalo">CAVALO: 0</p>
+            <p id="quantidadeGalinha">GALINHA: 0</p>
+            <p id="quantidadePato">PATO: 0</p>
+            <p id="quantidadePorco">PORCO: 0</p>
+            <p id="quantidadeOvelha">OVELHA: 0</p>
+            <p id="quantidadeVaca">VACA: 0</p>
+        </div>
+    </div>
+
+    <div id="box2">
+        <div id="linha_card1">
+            <div id="card_animals">
+                <img src="img/cavalo.jpg" alt="" id="img_animals">
+                <div id="text_card_animals">
+                    <h1>Cavalo</h1>
+                    <button onclick="comprarAnimals('cavalo')">COMPRAR</button>
+                    <p id="valorCavalo">Cada unidade custa:10 meodas</p>
+                    <br>
+                    <p>Essa unidade adiciona mais 1 ao click</p>
+                </div>
+
+            </div>
+            <div id="card_animals">
+                <img src="img/galinha.jpg" alt="" id="img_animals">
+                <div id="text_card_animals">
+                    <h1>Galinha</h1>
+                    <button onclick="comprarAnimals('galinha')">COMPRAR</button>
+                    <p id="valorGalinha">Cada unidade custa:150 meodas</p>
+                    <br>
+                    <p>Essa unidade adiciona: 1 moeda por segundo</p>
+                </div>
+            </div>
+            <div id="card_animals">
+                <img src=" img/pato.jpg" alt="" id="img_animals">
+                <div id="text_card_animals">
+                    <h1>Pato</h1>
+                    <button onclick="comprarAnimals('pato')">COMPRAR</button>
+                    <p id="valorPato">Cada unidade custa:300 meodas</p>
+                    <br>
+                    <p>Essa unidade adiciona mais 2 ao click</p>
+                    <p>Essa unidade adiciona: 1 moeda por segundo</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="linha_card2">
+            <div id="card_animals">
+                <img src="img/porco.jpg" alt="" id="img_animals">
+                <div id="text_card_animals">
+                    <h1>Porco</h1>
+                    <button onclick="comprarAnimals('porco')">COMPRAR</button>
+                    <p id="valorPorco">Cada unidade custa:500 meodas</p>
+                    <br>
+                    <p>Essa unidade adiciona mais 2 ao click</p>
+                    <br>
+                    <p>Essa unidade adiciona: 5 moeda por segundo</p>
+                </div>
+            </div>
+            <div id="card_animals">
+                <img src="img/ovelha.jpg" alt="" id="img_animals">
+                <div id="text_card_animals">
+                    <h1>Ovelha</h1>
+                    <button onclick="comprarAnimals('ovelha')">COMPRAR</button>
+                    <p id="valorOvelha">Cada unidade custa:1000 meodas</p>
+                    <br>
+                    <p>Essa unidade adiciona mais 20 ao click</p>
+                    <br>
+                    <p>Essa unidade duplica o valor moeda por segundo</p>
+                </div>
+            </div>
+            <div id="card_animals">
+                <img src="img/vaca.jpg" alt="" id="img_animals">
+                <div id="text_card_animals">
+                    <h1>Vaca</h1>
+                    <button onclick="comprarAnimals('vaca')">COMPRAR</button>
+                    <p id="valorVaca">Cada unidade custa:1500 meodas</p>
+                    <br>
+                    <p>Essa unidade duplica o valor do click</p>
+                    <br>
+                    <p>Essa unidade triplica o valor moeda por segundo</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p id="copyPontes">&copy;Pedro Pontes Developer</p>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
