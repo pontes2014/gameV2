@@ -1,114 +1,108 @@
-let Valorclick = 1
-let saldo = 0
-let moedaPorSegundo = 0
-let valorCavalo = 10
-let valorGalinha = 150
-let valorPato = 300
-let valorPorco = 500
-let valorOvelha = 1000
-let valorVaca = 1500
-let quantidadeCavalo = 0
-let quantidadeGalinha = 0
-let quantidadePato = 0
-let quantidadePorco = 0
-let quantidadeOvelha = 0
-let quantidadeVaca = 0
+let dadosFazendeiro = {
+    Valorclick: 1, saldo: 0, moedaPorSegundo: 0
+}
 
+let valoresAnimais = {
+    valorCavalo: 10, valorGalinha: 150, valorPato: 300, valorPorco: 500, valorOvelha: 1000, valorVaca: 1500
+}
 
+let animais = {
+    cavalo: 0, galinha: 0, pato: 0, porco: 0, ovelha: 0, vaca: 0
+}
 
 function moedaClick() {
-    saldo += Valorclick
-    document.getElementById('saldo').innerHTML = `Saldo: ${saldo}`
+    dadosFazendeiro.saldo += dadosFazendeiro.Valorclick
+    document.getElementById('saldo').innerHTML = `Saldo: ${dadosFazendeiro.saldo}`
 }
 
 setInterval(moedasPorSegundo, 1000)
 
 function comprarAnimals(acao) {
     if (acao == 'cavalo') {
-        if (saldo >= valorCavalo) {
-            saldo -= valorCavalo
-            Valorclick += 1
-            valorCavalo *= 2
-            quantidadeCavalo += 1
-            document.getElementById('quantidadeCavalo').innerHTML = `CAVALO: ${quantidadeCavalo}`
-            document.getElementById('saldo').innerHTML = `Saldo: ${saldo}`
-            document.getElementById('valorCavalo').innerHTML = `Cada unidade custa: ${valorCavalo} moedas`
-            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${Valorclick}`
+        if (dadosFazendeiro.saldo >= valoresAnimais.valorCavalo) {
+            dadosFazendeiro.saldo -= valoresAnimais.valorCavalo
+            dadosFazendeiro.Valorclick += 1
+            valoresAnimais.valorCavalo *= 2
+            animais.cavalo += 1
+            document.getElementById('quantidadeCavalo').innerHTML = `CAVALO: ${animais.cavalo}`
+            document.getElementById('saldo').innerHTML = `Saldo: ${dadosFazendeiro.saldo}`
+            document.getElementById('valorCavalo').innerHTML = `Cada unidade custa: ${valoresAnimais.valorCavalo} moedas`
+            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${dadosFazendeiro.Valorclick}`
         } else {
             alert('Dinheiro insuficiente')
         }
     } else if (acao == 'galinha') {
-        if (saldo >= valorGalinha) {
-            saldo -= valorGalinha
-            valorGalinha *= 2
-            quantidadeGalinha += 1
-            moedaPorSegundo += 1
-            document.getElementById('quantidadeGalinha').innerHTML = `GALINHA: ${quantidadeGalinha}`
-            document.getElementById('valorGalinha').innerHTML = `Cada unidade custa: ${valorGalinha} moedas`
-            document.getElementById('saldo').innerHTML = `Saldo: ${saldo}`
-            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${moedaPorSegundo}`
+        if (dadosFazendeiro.saldo >= valoresAnimais.valorGalinha) {
+            dadosFazendeiro.saldo -= valoresAnimais.valorGalinha
+            valoresAnimais.valorGalinha *= 2
+            animais.galinha += 1
+            dadosFazendeiro.moedaPorSegundo += 1
+            document.getElementById('quantidadeGalinha').innerHTML = `GALINHA: ${animais.galinha}`
+            document.getElementById('valorGalinha').innerHTML = `Cada unidade custa: ${valoresAnimais.valorGalinha} moedas`
+            document.getElementById('saldo').innerHTML = `Saldo: ${dadosFazendeiro.saldo}`
+            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${dadosFazendeiro.moedaPorSegundo}`
         } else {
             alert('Dinheiro insuficiente')
         }
     } else if (acao == 'pato') {
-        if (saldo >= valorPato) {
-            saldo -= valorPato
-            saldo *= 2
-            Valorclick += 2
-            quantidadePato += 1
-            moedaPorSegundo += 1
-            valorPato *= 2
-            document.getElementById('quantidadePato').innerHTML = `PATO: ${quantidadePato}`
-            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${Valorclick}`
-            document.getElementById('saldo').innerHTML = `Saldo: ${saldo}`
-            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${moedaPorSegundo}`
-            document.getElementById('valorPato').innerHTML = `Cada unidade custa: ${valorPato} moedas`
+        if (dadosFazendeiro.saldo >= valoresAnimais.valorPato) {
+            dadosFazendeiro.saldo -= valoresAnimais.valorPato
+            dadosFazendeiro.saldo *= 2
+            dadosFazendeiro.Valorclick += 2
+            animais.pato += 1
+            dadosFazendeiro.moedaPorSegundo += 1
+            valoresAnimais.valorPato *= 2
+            document.getElementById('quantidadePato').innerHTML = `PATO: ${animais.pato}`
+            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${dadosFazendeiro.Valorclick}`
+            document.getElementById('saldo').innerHTML = `Saldo: ${dadosFazendeiro.saldo}`
+            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${dadosFazendeiro.moedaPorSegundo}`
+            document.getElementById('valorPato').innerHTML = `Cada unidade custa: ${valoresAnimais.valorPato} moedas`
         } else {
             alert('Dinheiro insuficiente')
         }
     } else if (acao == 'porco') {
-        if (saldo >= valorPorco) {
-            saldo -= valorPorco
-            saldo *= 2
-            Valorclick += 2
-            quantidadePorco += 1
-            moedaPorSegundo += 5
-            valorPorco *= 2
-            document.getElementById('quantidadePorco').innerHTML = `PORCO: ${quantidadePorco}`
-            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${Valorclick}`
-            document.getElementById('saldo').innerHTML = `Saldo: ${saldo}`
-            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${moedaPorSegundo}`
-            document.getElementById('valorPorco').innerHTML = `Cada unidade custa: ${valorPorco} moedas`
+        if (dadosFazendeiro.saldo >= valoresAnimais.valorPorco) {
+            dadosFazendeiro.saldo -= valoresAnimais.valorPorco
+            dadosFazendeiro.saldo *= 2
+            dadosFazendeiro.Valorclick += 2
+            animais.porco += 1
+            dadosFazendeiro.moedaPorSegundo += 5
+            valoresAnimais.valorPorco *= 2
+            document.getElementById('quantidadePorco').innerHTML = `PORCO: ${animais.porco}`
+            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${dadosFazendeiro.Valorclick}`
+            document.getElementById('saldo').innerHTML = `Saldo: ${dadosFazendeiro.saldo}`
+            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${dadosFazendeiro.moedaPorSegundo}`
+            document.getElementById('valorPorco').innerHTML = `Cada unidade custa: ${valoresAnimais.valorPorco} moedas`
         } else {
             alert('Dinheiro insuficiente')
         }
     } else if (acao == 'ovelha') {
-        if (saldo >= valorOvelha) {
-            saldo -= valorOvelha
-            Valorclick += 20
-            quantidadeOvelha += 1
-            moedaPorSegundo *= 2
-            valorOvelha *= 2
-            document.getElementById('quantidadeOvelha').innerHTML = `OVELHA: ${quantidadeOvelha}`
-            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${Valorclick}`
-            document.getElementById('saldo').innerHTML = `Saldo: ${saldo}`
-            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${moedaPorSegundo}`
-            document.getElementById('valorOvelha').innerHTML = `Cada unidade custa: ${valorOvelha} moedas`
+        if (dadosFazendeiro.saldo >= valoresAnimais.valorOvelha) {
+            dadosFazendeiro.saldo -= valoresAnimais.valorOvelha
+            dadosFazendeiro.Valorclick += 20
+            animais.ovelha += 1
+            dadosFazendeiro.moedaPorSegundo *= 2
+            valoresAnimais.valorOvelha *= 2
+            document.getElementById('quantidadeOvelha').innerHTML = `OVELHA: ${animais.ovelha}`
+            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${dadosFazendeiro.Valorclick}`
+            document.getElementById('saldo').innerHTML = `Saldo: ${dadosFazendeiro.saldo}`
+            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${dadosFazendeiro.moedaPorSegundo}`
+            document.getElementById('valorOvelha').innerHTML = `Cada unidade custa: ${valoresAnimais.valorOvelha} moedas`
         } else {
             alert('Dinheiro insuficiente')
         }
     } else if (acao == 'vaca') {
-        if (saldo >= valorVaca) {
-            saldo -= valorVaca
-            Valorclick *= 2
-            quantidadeVaca += 1
-            moedaPorSegundo *= 3
-            valorVaca *= 2
-            document.getElementById('quantidadeVaca').innerHTML = `VACA: ${quantidadeVaca}`
-            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${Valorclick}`
-            document.getElementById('saldo').innerHTML = `Saldo: ${saldo}`
-            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${moedaPorSegundo}`
-            document.getElementById('valorVaca').innerHTML = `Cada unidade custa: ${valorVaca} moedas`
+        if (dadosFazendeiro.saldo >= valoresAnimais.valorVaca) {
+            dadosFazendeiro.saldo -= valoresAnimais.valorVaca
+            dadosFazendeiro.Valorclick *= 2
+            animais.vaca += 1
+            dadosFazendeiro.moedaPorSegundo *= 3
+            valoresAnimais.valorVaca *= 2
+            document.getElementById('quantidadeVaca').innerHTML = `VACA: ${animais.vaca}`
+            document.getElementById('moedaPorClick').innerHTML = `Moeda por click: ${dadosFazendeiro.Valorclick}`
+            document.getElementById('saldo').innerHTML = `Saldo: ${dadosFazendeiro.saldo}`
+            document.getElementById('moedaPorSegundo').innerHTML = `Moeda por segundo: ${dadosFazendeiro.moedaPorSegundo}`
+            document.getElementById('valorVaca').innerHTML = `Cada unidade custa: ${valoresAnimais.valorVaca} moedas`
         } else {
             alert('Dinheiro insuficiente')
         }
@@ -116,6 +110,6 @@ function comprarAnimals(acao) {
 }
 
 function moedasPorSegundo() {
-    saldo += moedaPorSegundo
-    document.getElementById('saldo').innerHTML = `<p>Saldo: ${saldo}</p>`
+    dadosFazendeiro.saldo += dadosFazendeiro.moedaPorSegundo
+    document.getElementById('saldo').innerHTML = `<p>Saldo: ${dadosFazendeiro.saldo}</p>`
 }
